@@ -3228,6 +3228,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 970454573}
     m_Modifications:
+    - target: {fileID: 1713629428967622, guid: 0331db742c9d04043b9ba01afcccf73f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713629428967622, guid: 0331db742c9d04043b9ba01afcccf73f, type: 3}
+      propertyPath: m_Name
+      value: EA04_Env_Terrain_Desert_01a_LOD0 - GROUND
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713629428967622, guid: 0331db742c9d04043b9ba01afcccf73f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4920106639978994, guid: 0331db742c9d04043b9ba01afcccf73f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.839843
@@ -6061,9 +6073,10 @@ GameObject:
   - component: {fileID: 534669903}
   - component: {fileID: 534669907}
   - component: {fileID: 534669906}
+  - component: {fileID: 534669908}
   m_Layer: 8
   m_Name: PHI_Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6126,8 +6139,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.019226337, y: 0.9684302, z: -0.062289573, w: 0.24061047}
-  m_LocalPosition: {x: -8.91802, y: 3.00735, z: 18.640644}
+  m_LocalRotation: {x: -0.067870334, y: -0.92557013, z: 0.3142513, w: -0.19989927}
+  m_LocalPosition: {x: -15.527635, y: 8.5039425, z: 15.651187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6210,6 +6223,22 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &534669908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5355c4e52148c499013e904a9267ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1815559390}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &541567648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10185,6 +10214,10 @@ PrefabInstance:
       value: EA04_Env_Terrain_Desert_01a_PRE (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1478878066499514, guid: 0331db742c9d04043b9ba01afcccf73f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713629428967622, guid: 0331db742c9d04043b9ba01afcccf73f, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -23096,6 +23129,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1793099989}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1815559389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2066896392038628118, guid: 45288819fde2143449a96207b14db0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255450782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1815559390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815559389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f139782edc0eed54983011903660e3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  turnSpeed: 1
+  posToGo: {x: 0, y: 0, z: 0}
 --- !u!1001 &1821015054
 PrefabInstance:
   m_ObjectHideFlags: 0
