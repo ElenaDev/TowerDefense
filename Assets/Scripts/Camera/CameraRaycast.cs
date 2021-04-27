@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraRaycast : MonoBehaviour
 {
@@ -17,8 +18,9 @@ public class CameraRaycast : MonoBehaviour
 
     void Update()
     {
-        //Si pulso el botón izquierdo del ratón
-        if(Input.GetMouseButtonDown(0))
+        //Si pulso el botón izquierdo del ratón y no estoy pulsando sobre un elemento de la interfaz
+        //// Check if the mouse was clicked over a UI element = !EventSystem.current.IsPointerOverGameObject()
+        if (Input.GetMouseButtonDown(0) && (EventSystem.current.IsPointerOverGameObject() == false))
         {
             //Camera.main hace referencia a la cámara de la escena que tenga la etiqueta de "MainCamera"
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);

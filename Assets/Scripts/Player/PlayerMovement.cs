@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public int speed;
     public int turnSpeed;
+    public UIManager uiManager;
 
     [HideInInspector]
     public Vector3 posToGo;
@@ -37,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.position = Vector3.MoveTowards(transform.position, posToGo, speed * Time.deltaTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, turnSpeed * Time.deltaTime);
+
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
     }
     //Esta función calcula la rotación PERO no le dice al player que rote
     public void Turning(Vector3 target)
@@ -47,5 +50,16 @@ public class PlayerMovement : MonoBehaviour
         //(es decir, hacia donde está mirando) con el vector que yo le paso (direction)
         rotation = Quaternion.LookRotation(direction);
         //con Lerp hacemos rotación gradual de un valor a otro    
+    }
+
+    //Esta función se ejecuta cuando el collider del player choca con otro collider trigger de la escena
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Hero") || other.CompareTag("Lich"))
+        {
+            uiManager.SelectCharacter(other.tag);
+            Destroy(other.gameObject);
+        }
+
     }
 }

@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Clase común que tienen todos los aliado/as
+/// </summary>
 public class Hero : MonoBehaviour
 {
     public Renderer[] renderers;
     public Material finalMaterial;
     public Material initMaterial;//material azul molón que nos indica que todavía no hemos colocado esta unidad
-
+    public enum kindOfAlly { hero, lich};
+    public kindOfAlly ally;
 
     private void Awake()
     {

@@ -1743,6 +1743,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8575962843278469929}
   - component: {fileID: 8528001795303803039}
+  - component: {fileID: 1843621415}
+  - component: {fileID: 1774991843}
+  - component: {fileID: 1774991847}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -1776,7 +1779,7 @@ Animator:
   m_GameObject: {fileID: 8578144232139213083}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e4aa31f274820b94eb0d0b764e0f383b, type: 3}
-  m_Controller: {fileID: 9100000, guid: 081111fd1834f42469e07a9a2ce295c6, type: 2}
+  m_Controller: {fileID: 9100000, guid: dfee7b4268387604d89cda5c538ce642, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1785,6 +1788,59 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1843621415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578144232139213083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdf686416e3b3d4da668e07cf2e9054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 8599754760346736389}
+  - {fileID: 8600166565631905745}
+  - {fileID: 8568745188311664623}
+  finalMaterial: {fileID: 2100000, guid: a507d7782a15a784287355f31af5c972, type: 2}
+  initMaterial: {fileID: 2100000, guid: 375115e6168528647872e8673fe74aa8, type: 2}
+  ally: 0
+--- !u!195 &1774991843
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578144232139213083}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 150
+  m_StoppingDistance: 1.8
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1774991847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578144232139213083}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4118b1fb827d42243871691a70a0a3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8578149201320606279
 GameObject:
   m_ObjectHideFlags: 0

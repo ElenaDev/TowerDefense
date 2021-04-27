@@ -227,6 +227,9 @@ GameObject:
   m_Component:
   - component: {fileID: 807162156928127317}
   - component: {fileID: 4777110160097844996}
+  - component: {fileID: 1793931243}
+  - component: {fileID: 8108073205396209393}
+  - component: {fileID: 8373305650510825271}
   m_Layer: 0
   m_Name: Lich
   m_TagString: Untagged
@@ -260,7 +263,7 @@ Animator:
   m_GameObject: {fileID: 2517923206109212531}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6e771cc839352964bbeed6d2f491914f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 0a15c11dbbde189499421a0ca9e248fa, type: 2}
+  m_Controller: {fileID: 9100000, guid: a2c75c7bedc677e4d8abe3a59541e8eb, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -269,6 +272,57 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1793931243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517923206109212531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdf686416e3b3d4da668e07cf2e9054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 4418794357794289921}
+  finalMaterial: {fileID: 2100000, guid: a507d7782a15a784287355f31af5c972, type: 2}
+  initMaterial: {fileID: 2100000, guid: 375115e6168528647872e8673fe74aa8, type: 2}
+  ally: 1
+--- !u!195 &8108073205396209393
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517923206109212531}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 150
+  m_StoppingDistance: 1.8
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &8373305650510825271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517923206109212531}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4118b1fb827d42243871691a70a0a3ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3082976022320997060
 GameObject:
   m_ObjectHideFlags: 0

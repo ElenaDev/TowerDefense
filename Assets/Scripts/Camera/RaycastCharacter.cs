@@ -10,7 +10,7 @@ public class RaycastCharacter : MonoBehaviour
 {
     public LayerMask groundLayer;//capa suelo, que es donde queremos colocar la unidad
     public GameObject currentObject;//el objecto(personaje) actual que quiero colocar
-    public bool objectToPlace;
+    public bool objectToPlace = false;
 
     Ray ray;//el rayo
     RaycastHit hit;//variable que me devuelve "el choque" entre el rayo y el gameobject
@@ -44,6 +44,8 @@ public class RaycastCharacter : MonoBehaviour
         {
             objectToPlace = false;
             currentObject.GetComponent<Hero>().ChangeToFinalMaterial();
+            //habilito el componente
+            currentObject.GetComponent<AllyMovement>().enabled = true;
             currentObject = null;
         }
     }
