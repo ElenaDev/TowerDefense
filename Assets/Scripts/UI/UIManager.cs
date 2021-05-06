@@ -15,6 +15,10 @@ public class UIManager : MonoBehaviour
     public int numLich;
     public Text _textNumHero;
     public Text _textNumLich;
+    //Variables que hacen referencia a los componentes image de los botones para hacer el "llenado" de la imagen y volver a poner el botón
+    //interactuable
+    public Image imageHero;
+    public Image imageLich;
 
     [Header("Slot Manager")]
     public Color colorA;//slot no relleno
@@ -32,6 +36,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         _textNumHero.text = "x " + numHero.ToString();
+        _textNumLich.text = "x " + numLich.ToString();
         //Reseta los slots de la unidad aliada que queramos, le pasamos el array de slots, que es de tipo Image
         ResetSlots(slotsHero);
     }
@@ -92,7 +97,7 @@ public class UIManager : MonoBehaviour
                 break;
             case Hero.kindOfAlly.lich:
                 numLich--;
-               // _textNumLich.text = "x " + numLich.ToString();
+                _textNumLich.text = "x " + numLich.ToString();
                 n = numLich;
                 break;
             default:
@@ -108,16 +113,25 @@ public class UIManager : MonoBehaviour
         switch (tag)
         {
             case "Hero":
-                AddSlotToAlly(slotsHero, numHero, _textNumHero);
+                AddSlotToAlly(slotsHero, ref numHero, _textNumHero, imageHero);
                 break;
             case "Lich":
-                AddSlotToAlly(slotsLich, numLich, _textNumLich);
+                AddSlotToAlly(slotsLich, ref numLich, _textNumLich, imageLich);
                 break;
             default:
                 break;
         }
     }
-    void AddSlotToAlly(Image[] slots, int n, Text _text)
+    /// <summary>
+    /// Si queremos actualizar el valor de numHero o numLich a través de la variable n, tenemos que ponerle "ref" para que n apunte
+    //  a la variable en cuestión. Si no se lo ponemos, n valdrá lo que valga numHero en la llamada pero al actualizar el valor de n no
+    //  actualizará el valor de numHero
+    /// </summary>
+    /// <param name="slots"></param>
+    /// <param name="n"></param>
+    /// <param name="_text"></param>
+    /// <param name="_image"></param>
+    void AddSlotToAlly(Image[] slots, ref int n, Text _text, Image _image)
     {
         int i;
         for (i=0; i< slots.Length;i++)
@@ -128,8 +142,10 @@ public class UIManager : MonoBehaviour
 
         if(i == slots.Length)
         {
+            //AddNumberAlly(tag, _text);
             n++;
             _text.text = "x " + n.ToString();
+            StartCoroutine("FillAmountButton", _image);
             //Resetar los slots
             ResetSlots(slots);
         }
@@ -143,6 +159,22 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].color = colorA;
+        }
+    }
+    void AddNumberAlly(string tag, Text _text)
+    {
+        switch (tag)
+        {
+            case "Hero":
+                numHero++;
+                _text.text = "x " + numHero.ToString();
+                break;
+            case "Lich":
+                numLich++;
+                _text.text = "x " + numLich.ToString();
+                break;
+            default:
+                break;
         }
     }
 

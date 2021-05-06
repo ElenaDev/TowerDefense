@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebb25782383fa2046ba9d589315c70be, type: 3}
-  m_Name: Shopkeeper
+  m_Name: Hero
   m_EditorClassIdentifier: 
-  nameEnemy: Shopkeeper
-  image: {fileID: 21300000, guid: 3dee9bd3356a3764783feaef0b9d9022, type: 3}
-  maxHealth: 30
-  force: 100
-  speed: 3
+  maxHealth: 50
+  speed: 10
+  damage: 20

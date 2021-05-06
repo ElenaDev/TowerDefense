@@ -9,17 +9,15 @@ using UnityEngine;
 /// 3. Son serializables con JsonUtility
 /// </summary>
 
-[CreateAssetMenu(fileName = "New Enemy", menuName = "Enemies")]
-public class EnemyData : ScriptableObject
+[CreateAssetMenu(fileName = "New Ally", menuName = "Allies")]
+public class AllyData : ScriptableObject
 {
-    public string nameEnemy;
-    public Sprite image;
     public float maxHealth;
-    public float force;
     public int speed;
+    public int damage;
 
     public void ShowMessage()
     {
-        Debug.Log("My name is " + nameEnemy);
+        //Do stuff
     }
 }

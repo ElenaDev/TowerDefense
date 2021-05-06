@@ -12,11 +12,17 @@ public class Hero : MonoBehaviour
     public enum kindOfAlly { hero, lich};
     public kindOfAlly ally;
 
+    HeroAttack heroAttack;
+
     private void Awake()
     {
         ChangeMaterial(initMaterial);
-    }
 
+        if (ally == kindOfAlly.hero)
+        {
+            heroAttack = GetComponentInChildren<HeroAttack>();
+        }
+    }
     //función pública porque la voy a llamar desde otro script
     public void ChangeToFinalMaterial()
     {
@@ -34,5 +40,12 @@ public class Hero : MonoBehaviour
             renderers[i].material = mat;
         }
     }
-
+    //Función que llamamos como evento en la animación
+    public void Attack()
+    {
+        if (ally == kindOfAlly.hero)
+        {
+            heroAttack.Attack();
+        }
+    }
 }

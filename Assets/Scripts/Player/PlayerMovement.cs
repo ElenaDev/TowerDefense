@@ -6,17 +6,20 @@ public class PlayerMovement : MonoBehaviour
 {
     public int speed;
     public int turnSpeed;
+    public bool attackingEnemy;
     public UIManager uiManager;
 
     [HideInInspector]
     public Vector3 posToGo;
 
+    PlayerAttack playerAttack;
     Animator anim;
     Quaternion rotation;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        playerAttack = GetComponentInChildren<PlayerAttack>();
     }
 
     void Start()
@@ -31,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
         if(transform.position == posToGo)
         {
             anim.SetBool("IsRunning", false);
+            if(attackingEnemy == true)
+            {
+                playerAttack.Attack();
+                attackingEnemy = false;
+            }
         }
         else//si no estoy en la posición de destino, significa que me estoy moviendo y que voy a reproducir Run
         {
@@ -61,5 +69,10 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+    }
+    //Función que vamos a llamar desde evento en la animación
+    public void Attack()
+    {
+        playerAttack.AttackWithCollider();
     }
 }
